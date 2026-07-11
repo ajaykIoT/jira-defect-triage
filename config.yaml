@@ -1,0 +1,33 @@
+# Jira triage configuration
+
+jira:
+  # JQL selecting defects that need triage (new/updated, not yet auto-triaged)
+  triage_jql: 'project = SCRUM  AND issuetype = Bug AND statusCategory != Done AND labels not in ("auto-triaged") ORDER BY created DESC'
+  # JQL building the knowledge corpus of existing defects (used for duplicate/past-resolution matching)
+  corpus_jql: 'project = SCRUM  AND issuetype = Bug ORDER BY created DESC'
+  corpus_max_issues: 1000        # cap on corpus size
+  max_results_per_poll: 25       # triage at most N issues per cycle
+
+triage:
+  top_k_candidates: 8            # candidates sent to the LLM for duplicate confirmation
+  candidate_score_cutoff: 40     # 0-100 fuzzy score floor for candidates
+  duplicate_confidence_min: 0.7  # LLM confidence needed to mark duplicate
+  analyze_image_attachments: true
+  max_images_per_issue: 4
+  max_image_bytes: 4718592       # 4.5 MB per image
+
+output:
+  add_comment: true              # post triage report as a Jira comment
+  add_labels: true
+  triaged_label: auto-triaged
+  duplicate_label: auto-dup
+  link_duplicates: true          # create a "Duplicate" issue link to the original
+  dry_run: false                 # true = analyze and print, write nothing to Jira
+
+llm:
+  model: gpt-4o
+  max_tokens: 2048
+
+poll:
+  interval_seconds: 300
+  state_file: .triage_state.json
