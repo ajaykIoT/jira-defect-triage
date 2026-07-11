@@ -41,6 +41,14 @@
 - the root cause, the severity, and the evidence read from the screenshot.   →  highlights: rest
 - Anyone opening this ticket now knows, instantly, that the fix already exists in release two point four point one.   →  highlights: pastres
 
+## phase2 (added in v2 — inserted before outro, ~39s)
+- Before we finish, here is a look ahead, at phase two.   →  highlights: title
+- The plan is to bring this solution into the H S B C Agentic Hub dashboard, as a shared, multi-tenant service.   →  highlights: hub
+- Multiple teams across the bank can onboard their own Jira projects to the agent, through a simple, self-service flow.   →  highlights: teams
+- Each team becomes its own tenant, with its own projects, its own data, and its own triage rules.   →  highlights: caps
+- And the agent works strictly within each team's boundary. Duplicate matching never crosses tenants, so one team's tickets are never read against another's.   →  highlights: boundary
+- The hub dashboard then gives every team its own view: triage activity, duplicates caught, and engineering hours saved.   →  highlights: metrics
+
 ## outro
 - That's the Jira Auto-Triage application.   →  highlights: title
 - Duplicates caught, with past fixes surfaced.   →  highlights: c12
