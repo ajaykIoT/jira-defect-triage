@@ -1,14 +1,16 @@
 # Live demo narration — speech-synced highlight version (British female voice)
 
+> v5: gold banner "Triage for GPE R45 release defects" on the opening slide; spoken "duplicate" reduced to 2 mentions (dry-run confirm + outro).
+
 ## intro
 - Hello, and welcome. In this demonstration we'll watch the Jira Auto-Triage application working against a real Jira Cloud site.   →  highlights: title
 
-## manual_today (added in v3 — inserted after intro line 1, ~36s)
-- But before we watch it in action, consider how this work is done today. Defect triage is still, largely, a manual process.   →  highlights: title
-- For every defect, engineers gather the details by hand: the description, the steps to reproduce, the trace logs, and the error screenshots.   →  highlights: ticket
-- They paste all of this into productivity tools, or into GitHub Copilot, and ask it to analyse the failure.   →  highlights: tools
-- The root cause analysis is then written up manually, why by why, into a document.   →  highlights: rca
-- That costs hours of engineering effort per defect, and past fixes are easily missed. This is exactly what the application automates.   →  highlights: cost
+## manual_today (v5 title: "Triage for GPE R45 release defects"; AI tools generate the RCA, real example EU PROD R45, ~55s)
+- But before we watch it in action, consider how these defects are triaged today. For the G P E R forty five release, defect triage is still, largely, a manual process.   →  highlights: title
+- Take a real example: defect E U PROD R forty five, where the PHR message is missing sender charge entries. Engineers gather the details by hand: the description, the steps to reproduce, the HVP trace logs, and the error screenshots.   →  highlights: ticket
+- They paste all of this into A I tools — the productivity suite, or GitHub Copilot — and ask them to analyse the failure.   →  highlights: tools
+- These A I tools then generate the root cause analysis automatically: the five whys, the timeline, and the suspected code. Here, a mapping bug that reads only the first line of the multi-line sender charges.   →  highlights: rca
+- But engineers still have to gather and paste everything by hand, ticket by ticket, and past fixes are easily missed. This is exactly what the application automates.   →  highlights: cost
 
 ## intro (continued)
 - Whenever a defect is raised in Jira, the app reads the full ticket,   →  highlights: b1
@@ -33,20 +35,20 @@
 - A I vision then reads the image, finding the exact error: a null pointer exception at session manager, line forty two.   →  highlights: vision
 - It compares the ticket against every existing defect, and confirms: SCRUM sixteen is a duplicate of SCRUM fifteen, with ninety five percent confidence.   →  highlights: dup16
 - Crucially, it surfaces the past resolution: fixed in release two point four point one.   →  highlights: past16
-- SCRUM eighteen, the checkout problem, is likewise caught as a duplicate of the payment timeout, with its own past fix surfaced.   →  highlights: dup18
+- SCRUM eighteen, the checkout problem, is likewise matched to the earlier payment timeout, with its own past fix surfaced.   →  highlights: dup18
 - And SCRUM twenty three, which is genuinely new, receives a root cause and a suggested fix instead.   →  highlights: new23
 
 ## realrun
 - Step two: the real run. The app now writes its findings back to Jira, through the standard Jira A P Is.   →  highlights: cmd
 - For each ticket, it posts the triage report as a comment. You can see the two-oh-one Created responses, from the live site.   →  highlights: comments
 - It adds the labels auto-triaged, and auto-dup, so triaged tickets are easy to filter.   →  highlights: labels
-- And it creates a proper duplicate link, connecting SCRUM sixteen to the original, SCRUM fifteen.   →  highlights: links
+- And it creates a proper link, connecting SCRUM sixteen back to the original, SCRUM fifteen.   →  highlights: links
 - These were real A P I calls. The tickets on the live Jira site have genuinely been updated.   →  highlights: logged
 
 ## jira_after
 - And here is the proof, on the real ticket. SCRUM sixteen now carries both labels.   →  highlights: labels
-- A linked work item records that it duplicates SCRUM fifteen.   →  highlights: link
-- And the full auto-triage comment sits on the ticket: the duplicate verdict, and the past resolution,   →  highlights: verdict
+- A linked work item points back to SCRUM fifteen.   →  highlights: link
+- And the full auto-triage comment sits on the ticket: the verdict, and the past resolution,   →  highlights: verdict
 - the root cause, the severity, and the evidence read from the screenshot.   →  highlights: rest
 - Anyone opening this ticket now knows, instantly, that the fix already exists in release two point four point one.   →  highlights: pastres
 
@@ -55,8 +57,8 @@
 - The plan is to bring this solution into the H S B C Agentic Hub dashboard, as a shared, multi-tenant service.   →  highlights: hub
 - Multiple teams across the bank can onboard their own Jira projects to the agent, through a simple, self-service flow.   →  highlights: teams
 - Each team becomes its own tenant, with its own projects, its own data, and its own triage rules.   →  highlights: caps
-- And the agent works strictly within each team's boundary. Duplicate matching never crosses tenants, so one team's tickets are never read against another's.   →  highlights: boundary
-- The hub dashboard then gives every team its own view: triage activity, duplicates caught, and engineering hours saved.   →  highlights: metrics
+- And the agent works strictly within each team's boundary. Matching never crosses tenants, so one team's tickets are never read against another's.   →  highlights: boundary
+- The hub dashboard then gives every team its own view: triage activity, repeat defects caught, and engineering hours saved.   →  highlights: metrics
 
 ## outro
 - That's the Jira Auto-Triage application.   →  highlights: title
