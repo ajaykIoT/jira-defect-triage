@@ -2,6 +2,15 @@
 
 ## intro
 - Hello, and welcome. In this demonstration we'll watch the Jira Auto-Triage application working against a real Jira Cloud site.   →  highlights: title
+
+## manual_today (added in v3 — inserted after intro line 1, ~36s)
+- But before we watch it in action, consider how this work is done today. Defect triage is still, largely, a manual process.   →  highlights: title
+- For every defect, engineers gather the details by hand: the description, the steps to reproduce, the trace logs, and the error screenshots.   →  highlights: ticket
+- They paste all of this into productivity tools, or into GitHub Copilot, and ask it to analyse the failure.   →  highlights: tools
+- The root cause analysis is then written up manually, why by why, into a document.   →  highlights: rca
+- That costs hours of engineering effort per defect, and past fixes are easily missed. This is exactly what the application automates.   →  highlights: cost
+
+## intro (continued)
 - Whenever a defect is raised in Jira, the app reads the full ticket,   →  highlights: b1
 - including any screenshots attached to it.   →  highlights: b2
 - It checks whether the same problem has been reported before,   →  highlights: b3
